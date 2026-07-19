@@ -1,0 +1,30 @@
+type: horizontal-stack
+
+cards:
+
+  - type: custom:mushroom-template-card
+
+    primary: Hotend
+
+    secondary: >
+      {{states('sensor.btt_cb1_extruder_temperature')}}°
+      /
+      {{states('number.btt_cb1_extruder_target')}}°
+
+    icon: mdi:printer-3d-nozzle-heat
+
+    icon_color: red
+
+
+  - type: custom:mushroom-template-card
+
+    primary: Bed
+
+    secondary: >
+      {{states('sensor.btt_cb1_bed_temperature')}}°
+      /
+      {{states('number.btt_cb1_bed_target')}}°
+
+    icon: mdi:radiator
+
+    icon_color: orange

@@ -1,0 +1,36 @@
+type: custom:mushroom-template-card
+
+entity: sensor.btt_cb1_current_print_state
+
+primary: >
+  {% set state = states(entity) %}
+
+  {% if state == 'printing' %}
+    🟢 Printing
+  {% elif state == 'paused' %}
+    🟡 Paused
+  {% elif state == 'complete' %}
+    🔵 Complete
+  {% elif state == 'error' %}
+    🔴 Error
+  {% else %}
+    ⚪ Ready
+  {% endif %}
+
+secondary: >
+  {{ states('sensor.btt_cb1_filename') }}
+
+icon: mdi:printer-3d
+
+icon_color: >
+  {% if is_state(entity,'printing') %}
+    green
+  {% elif is_state(entity,'paused') %}
+    amber
+  {% elif is_state(entity,'error') %}
+    red
+  {% else %}
+    blue
+  {% endif %}
+
+fill_container: true

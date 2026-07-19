@@ -1,0 +1,34 @@
+printer_name: "BTT CB1"
+
+entities:
+
+  state: sensor.btt_cb1_current_print_state
+  filename: sensor.btt_cb1_filename
+  progress: sensor.btt_cb1_progress
+
+  camera: camera.btt_cb1_logi
+  thumbnail: camera.btt_cb1_thumbnail
+
+  nozzle:
+    current: sensor.btt_cb1_extruder_temperature
+    target: number.btt_cb1_extruder_target
+
+  bed:
+    current: sensor.btt_cb1_bed_temperature
+    target: number.btt_cb1_bed_target
+
+  layer:
+    current: sensor.btt_cb1_current_layer
+    total: sensor.btt_cb1_total_layer
+
+  time_left: sensor.btt_cb1_print_time_left
+
+  fan: sensor.btt_cb1_hotend_fan
+  speed: sensor.btt_cb1_print_speed
+
+  led: light.btt_cb1_neopixel_led
+
+  diagnostics:
+    cb1_temp: sensor.btt_cb1_cb1_temp
+    mcu_load: sensor.btt_cb1_mcu_load
+    memory: sensor.btt_cb1_memory_used

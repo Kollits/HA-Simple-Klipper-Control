@@ -1,0 +1,28 @@
+type: custom:mushroom-chips-card
+
+chips:
+
+  - type: template
+    icon: mdi:layers
+    content: >
+      {{states('sensor.btt_cb1_current_layer')}}
+      /
+      {{states('sensor.btt_cb1_total_layer')}}
+
+
+  - type: template
+    icon: mdi:clock-outline
+    content: >
+      {{states('sensor.btt_cb1_print_time_left')}}
+
+
+  - type: template
+    icon: mdi:cpu-64-bit
+    content: >
+      {{states('sensor.btt_cb1_mcu_load')}}%
+
+
+  - type: template
+    icon: mdi:memory
+    content: >
+      {{states('sensor.btt_cb1_memory_used')}}%

@@ -1,0 +1,31 @@
+type: custom:stack-in-card
+mode: vertical
+class: mission-control
+
+cards:
+
+  - !include header.yaml
+
+  - !include temperatures.yaml
+
+  - type: picture-entity
+    entity: camera.btt_cb1_logi
+    camera_view: live
+    show_name: false
+    show_state: false
+
+  - type: custom:bar-card
+    entity: sensor.btt_cb1_progress
+    height: 24px
+    name: PRINT PROGRESS
+    positions:
+      value: inside
+      name: inside
+    severity:
+      - color: "#00ff88"
+        from: 0
+        to: 100
+
+  - !include diagnostics.yaml
+
+  - !include controls.yaml

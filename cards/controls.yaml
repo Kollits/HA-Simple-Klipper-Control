@@ -1,0 +1,39 @@
+type: horizontal-stack
+
+cards:
+
+- type: custom:mushroom-template-card
+  icon: mdi:pause
+  icon_color: amber
+
+  tap_action:
+    action: call-service
+    service: button.press
+    target:
+      entity_id: button.btt_cb1_pause_print
+
+
+- type: custom:mushroom-template-card
+  icon: mdi:play
+  icon_color: green
+
+  tap_action:
+    action: call-service
+    service: button.press
+    target:
+      entity_id: button.btt_cb1_resume_print
+
+
+- type: custom:mushroom-template-card
+  icon: mdi:stop
+  icon_color: red
+
+  tap_action:
+    action: call-service
+    service: button.press
+    target:
+      entity_id: button.btt_cb1_cancel_print
+
+
+- type: custom:mushroom-light-card
+  entity: light.btt_cb1_neopixel_led
